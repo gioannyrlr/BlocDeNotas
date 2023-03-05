@@ -1,0 +1,191 @@
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
+@import url('https://fonts.cdnfonts.com/css/lucida-sans');
+
+
+*{
+    background-color: rgb(27,27,27) !important;
+    color: rgb(236, 236, 236) !important;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+nav, .container-fluid, .navbar-brand, #navbarNav, .navbar-nav, .nav-item, .nav-link{
+    background-color: #2c2c2c !important; 
+}
+
+.navbar{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.nav-link{
+    color: #9F9F9F !important;
+}
+
+.nav-link:hover{
+    color: white !important;
+}
+
+.form-crear{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+}
+
+.titulo-crear{
+    margin-top: 2%;
+    color: #D0D0D0 !important;
+}
+
+.input-crear{
+    padding: 5px 10px 5px 10px ;
+    margin: 15px;
+    width: 40%;
+    background-color: rgb(35,35,35) !important;
+    border-bottom: 3px solid #a4a4a4;
+    border-right: none;
+    border-radius: 8px;
+}
+
+.input-crear:hover{
+    background-color: rgb(40, 40, 40) !important;
+}
+
+.input-crear:focus{
+    background-color: rgb(21, 21, 21) !important;
+    outline: none;
+}
+
+.button-crear{
+    border: none !important;
+}
+
+.button-crear i{
+    font-size: 25px !important;
+    color: #D0D0D0;
+}
+
+.button-crear i:hover{
+    color: white;
+}
+                                                
+.container-crear{
+    padding-top: 10px;
+    border: 1px solid #303030;
+    border-radius: 8px;
+    box-shadow: 0px 10px 10px -6px rgb(20, 20, 20);
+    height:fit-content;
+}
+
+.container-p{
+    margin-top: 10px !important;
+    padding: 12px 20px 0px 20px;
+    border: 1px solid #171717;
+    border-radius: 8px;
+    box-shadow: 0px 10px 10px -6px rgb(19, 19, 19);
+    width: 40%;
+    margin: auto;
+    background-color: #232323 !important;
+}
+
+.container-p p{
+    background-color: #232323 !important;
+}
+
+.container{
+    height: 100%;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.list-group-item{
+    margin: 2px !important;
+    border: none !important;
+}
+
+.list-group-item:hover{
+    background-color: #2c2c2c !important;
+}
+
+.list-link{
+    color: #D0D0D0 !important;
+}
+
+.list-link:hover{
+    color: white !important;
+}
+
+.list-link-del i{
+    color: #b82b39 !important;
+    font-size: 18px !important;
+    margin: 0px 0px 0px 15px;
+}
+
+.list-link-del i:hover{
+    color: #e24e5d !important;
+}
+
+.list-link-edit i{
+    color: #2cb254 !important;
+    font-size: 18px !important;
+}
+
+.list-link-edit i:hover{
+    color: #4bea7b !important;
+}
+
+.container-url{
+    border: 0.5px solid rgb(76, 76, 76);
+    padding: 8px 0px 6px 20px !important;
+}
+
+.container-url p{
+    margin-bottom: 0 !important;
+}
+
+.crearnota-p{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.button-crearnota, .button-crearnota2, .button-guardar{
+    padding: 5px 10px 5px 10px ;
+    margin: 15px;
+    width: 22%;
+    background-color: #BBBBBA !important;
+    color: black !important;
+    border: none;
+    border-radius: 8px;
+}
+
+.button-crearnota:hover, .button-crearnota2:hover{
+    background-color: #8d8d8d !important;
+}
+
+.input-nota, .textarea-nota-1, .textarea-nota{
+    resize: none;
+    padding: 5px 10px 5px 10px ;
+    margin: 10px;
+    width: 40%;
+    background-color: rgb(35,35,35) !important;
+    border-bottom: 3px solid #a4a4a4;
+    border-right: none;
+    border-radius: 8px;
+    font-family: 'Lucida Sans Typewriter', sans-serif !important;
+}
+
+.input-nota:hover, .textarea-nota-1:hover, .textarea-nota:hover{
+    background-color: rgb(40, 40, 40) !important;
+}
+
+.input-nota:focus, .textarea-nota-1:focus, .textarea-nota:focus{
+    background-color: rgb(21, 21, 21) !important;
+    outline: none;
+}
+
+.textarea-nota-1, .textarea-nota {
+    width: 98%;
+    height: 300px;
+}

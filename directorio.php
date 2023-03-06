@@ -135,7 +135,8 @@
 
             <div class="list-group" style="width: 100%; border: 0.5px solid #232323 !important; margin: 5px 0px 5px 0px !important;">
                 <li class="list-group-item">
-                    <h5 class="list-title" style="background-color: transparent !important;"><?php echo substr($valor ,0 , (strlen($valor) - 5)); ?></h5>
+                    <img src="./assets/img/txt-icon.png" alt="Logo" width="14" height="18" style="margin: 0px 2px 0px 2px; background-color: transparent !important;" class="d-inline-block align-text-top">
+                    <h5 class="list-title" style="background-color: transparent !important; display: inline; margin-left: 4px;"><?php echo substr($valor ,0 , (strlen($valor) - 5)); ?></h5>
                     <p class="list-text" style="background-color: transparent !important;"><i style="background-color: transparent !important; color: #818181 !important;"><?php echo substr($contents, 0, 60); ?>...</i></p>
                     <a href="nota.php?note=<?php echo $valor ?>&dir=<?php echo $dir ?>" class="list-link-edit" style="background-color: transparent !important;"><i class="bi bi-pencil-square" style="background-color: transparent !important;"></i></a>
                     <a href="delete.php?note=<?php echo $valor ?>&dir=<?php echo $dir ?>&delete=1" class="list-link-del" style="background-color: transparent !important;"><i class="bi bi-trash3" style="background-color: transparent !important;"></i></a>
@@ -144,7 +145,7 @@
 
             <?php
 
-            }else{
+                        }else{
 
             ?>
 

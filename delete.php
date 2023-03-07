@@ -8,7 +8,7 @@ if(isset($_GET['delete'])){
             $note = $_GET['note'];
 
             try{
-                $file = ".\\archivos\\" . $dir . '\\' . $note;
+                $file = "archivos\\" . $dir . '\\' . $note;
 
                 if(unlink($file)){
                     header('Location: ./directorio.php?dir=' . $dir);
@@ -29,7 +29,7 @@ if(isset($_GET['delete'])){
             $dir = $_GET['dir'];
 
             try{
-                $file = ".\\archivos\\" . $dir;
+                $file = "archivos\\" . $dir;
 
                 rmdir($file);
                 header('Location: ./abrir.php');

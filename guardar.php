@@ -9,7 +9,7 @@ if(isset($_POST['save'])){
             $content = $_POST['textarea-nota'];
 
             try{
-                $file = ".\\archivos\\" . $dir . '\\' . $note;
+                $file = "archivos\\" . $dir . '\\' . $note;
                 $gestor = fopen($file, "w");
 
                 fwrite($gestor, $content);

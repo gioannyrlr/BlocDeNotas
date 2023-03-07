@@ -13,11 +13,11 @@
                     $directorio = $_POST['directorio'];
                     $content = $_POST['textarea-nota-1'];
     
-                    $my_dir = "archivos/$directorio/$name.html";
+                    $my_dir = "archivos/$directorio/$name.txt";
 
                     try{
                         if(file_exists($my_dir)){
-                            $message = "El directorio <b>$name</b>.txt ya existe.";
+                            $message = "La nota $name.txt ya existe.";
                         }else{
                             $archivo = fopen($my_dir,'a');
                             fputs($archivo, $content);
@@ -114,58 +114,63 @@
             <br>               
         </div>
 
-        <p><?php echo $message ?></p>
+        <div class="container-p">
+            <p style="display: flex !important; justify-content: center !important; color: transparent; !important"><?php echo $message ?></p>
+        </div>
 
         <div class="row">
 
-            <?php 
+        <?php 
 
-            $directorio = "archivos/" . $dir;
-            $ficheros1  = scandir($directorio);
+        $directorio = "archivos/" . $dir;
+        $ficheros1  = scandir($directorio);
 
-            if(count($ficheros1) > 2){
-                foreach($ficheros1 as $valor){
-                    if ('.' !== $valor && '..' !== $valor){
-                        $file = "archivos\\" . $dir . '\\' . $valor;
+        if(count($ficheros1) > 2){
+            foreach($ficheros1 as $valor){
+                if ('.' !== $valor && '..' !== $valor){
+                    $file = "archivos\\" . $dir . '\\' . $valor;
 
-                        if(filesize($file) > 0){
-                            $contents = file_get_contents($file, FILE_USE_INCLUDE_PATH);
+                    if(filesize($file) > 0){
+                        $contents = file_get_contents($file, FILE_USE_INCLUDE_PATH);
 
-            ?>
+        ?>
 
-            <div class="list-group" style="width: 100%; border: 0.5px solid #232323 !important; margin: 5px 0px 5px 0px !important;">
-                <li class="list-group-item">
-                    <img src="./assets/img/txt-icon.png" alt="Logo" width="14" height="18" style="margin: 0px 2px 0px 2px; background-color: transparent !important;" class="d-inline-block align-text-top">
-                    <h5 class="list-title" style="background-color: transparent !important; display: inline; margin-left: 4px;"><?php echo substr($valor ,0 , (strlen($valor) - 5)); ?></h5>
-                    <p class="list-text" style="background-color: transparent !important;"><i style="background-color: transparent !important; color: #818181 !important;"><?php echo substr($contents, 0, 60); ?>...</i></p>
-                    <a href="nota.php?note=<?php echo $valor ?>&dir=<?php echo $dir ?>" class="list-link-edit" style="background-color: transparent !important;"><i class="bi bi-pencil-square" style="background-color: transparent !important;"></i></a>
-                    <a href="delete.php?note=<?php echo $valor ?>&dir=<?php echo $dir ?>&delete=1" class="list-link-del" style="background-color: transparent !important;"><i class="bi bi-trash3" style="background-color: transparent !important;"></i></a>
-                </li>
-            </div>
+        <div class="list-group" style="width: 100%; border: 0.5px solid #232323 !important; margin: 5px 0px 5px 0px !important;">
+            <li class="list-group-item">
+                <img src="./assets/img/txt-icon.png" alt="Logo" width="14" height="18" style="margin: 0px 2px 0px 2px; background-color: transparent !important;" class="d-inline-block align-text-top">
+                <h5 class="list-title" style="background-color: transparent !important; display: inline; margin-left: 4px;"><?php echo substr($valor ,0 , (strlen($valor) - 5)); ?></h5>
+                <p class="list-text" style="background-color: transparent !important; margin-top: 5px !important;"><i style="background-color: transparent !important; color: #818181 !important;"><?php echo substr($contents, 0, 60); ?>...</i></p>
+                <h6 class="card-subtitle mb-2 text-muted" style="background-color: transparent !important;"><?php echo filesize($file) ?> bytes</h6>
+                <a href="nota.php?note=<?php echo $valor ?>&dir=<?php echo $dir ?>" class="list-link-edit" style="background-color: transparent !important;"><i class="bi bi-pencil-square" style="background-color: transparent !important;"></i></a>
+                <a href="delete.php?note=<?php echo $valor ?>&dir=<?php echo $dir ?>&delete=1" class="list-link-del" style="background-color: transparent !important;"><i class="bi bi-trash3" style="background-color: transparent !important;"></i></a>
+            </li>
+        </div>
 
-            <?php
+        <?php
 
-                        }else{
+                    } else{
 
-            ?>
+        ?>
 
-            <div class="list-group" style="width: 100%; border: 0.5px solid #232323 !important; margin: 5px 0px 5px 0px !important;">
-                <li class="list-group-item">
-                    <h5 class="list-title" style="background-color: transparent !important;"><?php echo $valor ?></h5>
-                    <p class="list-text" style="background-color: transparent !important;">Sin nada escrito...</p>
-                    <a href="nota.php?note=<?php echo $valor ?>&dir=<?php echo $dir ?>" class="list-link-edit" style="background-color: transparent !important;"><i class="bi bi-pencil-square" style="background-color: transparent !important;"></i></a>
-                    <a href="delete.php?note=<?php echo $valor ?>&dir=<?php echo $dir ?>&delete=1" class="list-link-del" style="background-color: transparent !important;"><i class="bi bi-trash3" style="background-color: transparent !important;"></i></a>
-                </li>
-            </div>
+        <div class="list-group" style="width: 100%; border: 0.5px solid #232323 !important; margin: 5px 0px 5px 0px !important;">
+            <li class="list-group-item">
+                <img src="./assets/img/txt-icon.png" alt="Logo" width="14" height="18" style="margin: 0px 2px 0px 2px; background-color: transparent !important;" class="d-inline-block align-text-top">
+                <h5 class="list-title" style="background-color: transparent !important; display: inline; margin-left: 4px;"><?php echo $valor ?></h5>
+                <p class="list-text" style="background-color: transparent !important;  color: #818181 !important; margin-top: 5px;">Sin nada escrito...</p>
+                <h6 class="card-subtitle mb-2 text-muted" style="background-color: transparent !important;"><?php echo filesize($file) ?> bytes</h6>
+                <a href="nota.php?note=<?php echo $valor ?>&dir=<?php echo $dir ?>" class="list-link-edit" style="background-color: transparent !important;"><i class="bi bi-pencil-square" style="background-color: transparent !important;"></i></a>
+                <a href="delete.php?note=<?php echo $valor ?>&dir=<?php echo $dir ?>&delete=1" class="list-link-del" style="background-color: transparent !important;"><i class="bi bi-trash3" style="background-color: transparent !important;"></i></a>
+            </li>
+        </div>
 
-            <?php
+        <?php
 
-                        }
                     }
                 }
             }
+        }
 
-            ?>
+        ?>
 
         </div>
     </div>

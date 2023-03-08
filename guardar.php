@@ -9,25 +9,25 @@ if(isset($_POST['save'])){
             $content = $_POST['textarea-nota'];
 
             try{
-                $file = "archivos\\" . $dir . '\\' . $note;
+                $file = "./archivos/" . $dir . '/' . $note;
                 $gestor = fopen($file, "w");
 
                 fwrite($gestor, $content);
                 fclose($gestor);
 
-                header('Location: ./directorio.php?dir=' . $dir);
+                header('Location: directorio.php?dir=' . $dir);
 
             }catch(Exception $e){
                 echo 'Excepción capturada: ',  $e->getMessage(), "\n\n";
             }
         }else{
-            header('Location: ./nuevo.php');
+            header('Location: nuevo.php');
         }
     }else{
-        header('Location: ./nuevo.php');
+        header('Location: nuevo.php');
     }
 }else{
-    header('Location: ./nuevo.php');
+    header('Location: nuevo.php');
 }
 
 ?>

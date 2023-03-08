@@ -70,7 +70,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
-            <img src="./assets/img/notepad-icon.webp" alt="Logo" width="25" height="24" style="margin-left: 12px; background-color: #2c2c2c !important;" class="d-inline-block align-text-top" href="index.php">
+            <img src="./assets/img/notepad-icon.webp" alt="Logo" width="25" height="24" style="margin-left: 12px; background-color: #2c2c2c !important;" class="d-inline-block align-text-top">
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
@@ -128,7 +128,7 @@
         if(count($ficheros1) > 2){
             foreach($ficheros1 as $valor){
                 if ('.' !== $valor && '..' !== $valor){
-                    $file = "archivos\\" . $dir . '\\' . $valor;
+                    $file = "archivos/" . $dir . '/' . $valor;
 
                     if(filesize($file) > 0){
                         $contents = file_get_contents($file, FILE_USE_INCLUDE_PATH);
